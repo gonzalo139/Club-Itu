@@ -20,15 +20,15 @@ export default async function CuotasPage() {
   return (
     <div className="flex flex-col gap-6">
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-50">
+        <h1 className="text-2xl font-semibold text-club-navy-800">
           Cuotas
         </h1>
         <GenerarCuotasButton />
       </div>
 
-      <div className="overflow-hidden rounded-lg border border-zinc-200 dark:border-zinc-800">
+      <div className="overflow-hidden rounded-lg border border-border">
         <table className="w-full text-left text-sm">
-          <thead className="bg-zinc-100 text-zinc-600 dark:bg-zinc-900 dark:text-zinc-400">
+          <thead className="bg-club-sky-50 text-club-navy-700">
             <tr>
               <th className="px-4 py-3 font-medium">Socio</th>
               <th className="px-4 py-3 font-medium">Período</th>
@@ -37,15 +37,15 @@ export default async function CuotasPage() {
               <th className="px-4 py-3 font-medium">Estado</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-zinc-200 dark:divide-zinc-800">
+          <tbody className="divide-y divide-border">
             {(cuotas ?? []).map((cuota) => {
               const socio = cuota.socios as unknown as {
                 nombre: string;
                 apellido: string;
               } | null;
               return (
-                <tr key={cuota.id} className="bg-white dark:bg-zinc-950">
-                  <td className="px-4 py-3 text-zinc-900 dark:text-zinc-50">
+                <tr key={cuota.id} className="bg-surface">
+                  <td className="px-4 py-3 text-club-navy-800">
                     {socio ? `${socio.apellido}, ${socio.nombre}` : "—"}
                   </td>
                   <td className="px-4 py-3 text-zinc-500">

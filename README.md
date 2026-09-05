@@ -1,4 +1,4 @@
-# Club Itu — Sistema de gestión de socios
+# C.S.D. Ituzaingó de Temperley — Sistema de gestión de socios
 
 CRM simple para la administración de un club de barrio: socios, cuotas y pagos.
 Sin servidores propios que mantener: se despliega en Vercel y usa Supabase (Postgres)

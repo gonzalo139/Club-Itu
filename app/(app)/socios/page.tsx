@@ -19,20 +19,20 @@ export default async function SociosPage() {
   return (
     <div className="flex flex-col gap-6">
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-50">
+        <h1 className="text-2xl font-semibold text-club-navy-800">
           Socios
         </h1>
         <Link
           href="/socios/nuevo"
-          className="rounded-md bg-zinc-900 px-4 py-2 text-sm font-medium text-white hover:bg-zinc-700 dark:bg-zinc-50 dark:text-zinc-900"
+          className="rounded-md bg-club-sky-500 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-club-sky-600"
         >
           + Nuevo socio
         </Link>
       </div>
 
-      <div className="overflow-hidden rounded-lg border border-zinc-200 dark:border-zinc-800">
+      <div className="overflow-hidden rounded-lg border border-border">
         <table className="w-full text-left text-sm">
-          <thead className="bg-zinc-100 text-zinc-600 dark:bg-zinc-900 dark:text-zinc-400">
+          <thead className="bg-club-sky-50 text-club-navy-700">
             <tr>
               <th className="px-4 py-3 font-medium">Nombre</th>
               <th className="px-4 py-3 font-medium">DNI</th>
@@ -41,10 +41,10 @@ export default async function SociosPage() {
               <th className="px-4 py-3 font-medium"></th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-zinc-200 dark:divide-zinc-800">
+          <tbody className="divide-y divide-border">
             {(socios ?? []).map((socio) => (
-              <tr key={socio.id} className="bg-white dark:bg-zinc-950">
-                <td className="px-4 py-3 text-zinc-900 dark:text-zinc-50">
+              <tr key={socio.id} className="bg-surface">
+                <td className="px-4 py-3 text-club-navy-800">
                   {socio.apellido}, {socio.nombre}
                 </td>
                 <td className="px-4 py-3 text-zinc-500">{socio.dni ?? "—"}</td>

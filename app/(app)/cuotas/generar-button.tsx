@@ -17,7 +17,7 @@ export function GenerarCuotasButton() {
             setError(result.error);
           })
         }
-        className="rounded-md bg-zinc-900 px-4 py-2 text-sm font-medium text-white hover:bg-zinc-700 disabled:opacity-50 dark:bg-zinc-50 dark:text-zinc-900"
+        className="rounded-md bg-club-sky-500 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-club-sky-600 disabled:opacity-50"
       >
         {isPending ? "Generando..." : "Generar cuotas del mes"}
       </button>

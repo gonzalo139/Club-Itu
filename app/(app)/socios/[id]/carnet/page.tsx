@@ -36,15 +36,15 @@ export default async function CarnetSocioPage({
 
   return (
     <div className="flex flex-col items-center gap-6">
-      <h1 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-50">
+      <h1 className="text-2xl font-semibold text-club-navy-800">
         Carnet digital
       </h1>
 
-      <div className="flex w-full max-w-sm flex-col items-center gap-4 rounded-xl border border-zinc-200 bg-white p-6 text-center shadow-sm dark:border-zinc-800 dark:bg-zinc-950">
+      <div className="flex w-full max-w-sm flex-col items-center gap-4 rounded-xl border border-border bg-surface p-6 text-center shadow-sm">
         <p className="text-sm font-medium uppercase tracking-wide text-zinc-500">
-          Club Itu
+          C.S.D. Ituzaingó
         </p>
-        <p className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
+        <p className="text-xl font-semibold text-club-navy-800">
           {socio.apellido}, {socio.nombre}
         </p>
         <p className="text-sm text-zinc-500">{categoria ?? "—"}</p>

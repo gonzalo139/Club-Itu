@@ -22,7 +22,7 @@ export default async function ConfiguracionPage({
 
   return (
     <div className="flex flex-col gap-8">
-      <h1 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-50">
+      <h1 className="text-2xl font-semibold text-club-navy-800">
         Configuración
       </h1>
 
@@ -32,8 +32,8 @@ export default async function ConfiguracionPage({
         </p>
       )}
 
-      <section className="rounded-lg border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-950">
-        <h2 className="text-lg font-medium text-zinc-900 dark:text-zinc-50">
+      <section className="rounded-lg border border-border bg-surface p-6">
+        <h2 className="text-lg font-medium text-club-navy-800">
           Categorías de socio y valor de cuota
         </h2>
         <p className="mt-1 text-sm text-zinc-500">
@@ -52,7 +52,7 @@ export default async function ConfiguracionPage({
                 className="flex flex-1 items-center gap-3"
               >
                 <input type="hidden" name="id" value={categoria.id} />
-                <span className="flex-1 text-sm font-medium text-zinc-900 dark:text-zinc-50">
+                <span className="flex-1 text-sm font-medium text-club-navy-800">
                   {categoria.nombre}
                 </span>
                 <span className="text-sm text-zinc-500">$</span>
@@ -66,7 +66,7 @@ export default async function ConfiguracionPage({
                 />
                 <button
                   type="submit"
-                  className="rounded-md bg-zinc-900 px-3 py-1.5 text-xs font-medium text-white hover:bg-zinc-700 dark:bg-zinc-50 dark:text-zinc-900"
+                  className="rounded-md bg-club-sky-500 px-3 py-1.5 text-xs font-medium text-white transition-colors hover:bg-club-sky-600"
                 >
                   Guardar
                 </button>
@@ -125,8 +125,8 @@ export default async function ConfiguracionPage({
         </details>
       </section>
 
-      <section className="rounded-lg border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-950">
-        <h2 className="text-lg font-medium text-zinc-900 dark:text-zinc-50">
+      <section className="rounded-lg border border-border bg-surface p-6">
+        <h2 className="text-lg font-medium text-club-navy-800">
           Actividades y cuota adicional
         </h2>
         <p className="mt-1 text-sm text-zinc-500">
@@ -142,7 +142,7 @@ export default async function ConfiguracionPage({
               className="flex items-center gap-3 rounded-md border border-zinc-200 p-3 dark:border-zinc-800"
             >
               <input type="hidden" name="id" value={actividad.id} />
-              <span className="flex-1 text-sm font-medium text-zinc-900 dark:text-zinc-50">
+              <span className="flex-1 text-sm font-medium text-club-navy-800">
                 {actividad.nombre}
               </span>
               <span className="text-sm text-zinc-500">$</span>
@@ -156,7 +156,7 @@ export default async function ConfiguracionPage({
               />
               <button
                 type="submit"
-                className="rounded-md bg-zinc-900 px-3 py-1.5 text-xs font-medium text-white hover:bg-zinc-700 dark:bg-zinc-50 dark:text-zinc-900"
+                className="rounded-md bg-club-sky-500 px-3 py-1.5 text-xs font-medium text-white transition-colors hover:bg-club-sky-600"
               >
                 Guardar
               </button>

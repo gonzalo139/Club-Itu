@@ -38,7 +38,7 @@ export default async function ActividadesPage({
 
   return (
     <div className="flex flex-col gap-8">
-      <h1 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-50">
+      <h1 className="text-2xl font-semibold text-club-navy-800">
         Actividades
       </h1>
 
@@ -48,8 +48,8 @@ export default async function ActividadesPage({
         </p>
       )}
 
-      <section className="rounded-lg border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-950">
-        <h2 className="text-lg font-medium text-zinc-900 dark:text-zinc-50">
+      <section className="rounded-lg border border-border bg-surface p-6">
+        <h2 className="text-lg font-medium text-club-navy-800">
           Nueva actividad
         </h2>
         <form action={crearActividad} className="mt-4 flex flex-wrap items-end gap-4">
@@ -81,7 +81,7 @@ export default async function ActividadesPage({
           </div>
           <button
             type="submit"
-            className="rounded-md bg-zinc-900 px-4 py-2 text-sm font-medium text-white hover:bg-zinc-700 dark:bg-zinc-50 dark:text-zinc-900"
+            className="rounded-md bg-club-sky-500 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-club-sky-600"
           >
             Crear actividad
           </button>
@@ -94,11 +94,11 @@ export default async function ActividadesPage({
           return (
             <section
               key={actividad.id}
-              className="rounded-lg border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-950"
+              className="rounded-lg border border-border bg-surface p-6"
             >
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="text-lg font-medium text-zinc-900 dark:text-zinc-50">
+                  <h3 className="text-lg font-medium text-club-navy-800">
                     {actividad.nombre}
                   </h3>
                   {Number(actividad.monto_cuota) > 0 && (

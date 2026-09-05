@@ -1,26 +1,67 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f4f7fb;
+  --foreground: #14213d;
+
+  /* Paleta del club: celeste y azul marino del escudo, con dorado como acento. */
+  --club-sky-50: #eef5fc;
+  --club-sky-100: #d7e9f8;
+  --club-sky-200: #b0d3f1;
+  --club-sky-300: #7fb5e6;
+  --club-sky-400: #4f94d4;
+  --club-sky-500: #3a7ec0;
+  --club-sky-600: #2d64a0;
+  --club-navy-600: #1e3a63;
+  --club-navy-700: #16304f;
+  --club-navy-800: #102540;
+  --club-navy-900: #0b1a2e;
+  --club-gold-400: #f0c04a;
+  --club-gold-500: #dba82f;
+
+  --surface: #ffffff;
+  --surface-muted: #eef3fa;
+  --border: #dbe5f1;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-border: var(--border);
+
+  --color-club-sky-50: var(--club-sky-50);
+  --color-club-sky-100: var(--club-sky-100);
+  --color-club-sky-200: var(--club-sky-200);
+  --color-club-sky-300: var(--club-sky-300);
+  --color-club-sky-400: var(--club-sky-400);
+  --color-club-sky-500: var(--club-sky-500);
+  --color-club-sky-600: var(--club-sky-600);
+  --color-club-navy-600: var(--club-navy-600);
+  --color-club-navy-700: var(--club-navy-700);
+  --color-club-navy-800: var(--club-navy-800);
+  --color-club-navy-900: var(--club-navy-900);
+  --color-club-gold-400: var(--club-gold-400);
+  --color-club-gold-500: var(--club-gold-500);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0b1626;
+    --foreground: #e8eef7;
+    --surface: #0f2038;
+    --surface-muted: #132a48;
+    --border: #1d3a5c;
+    --club-sky-400: #5b9fdb;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }

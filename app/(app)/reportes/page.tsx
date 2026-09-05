@@ -23,13 +23,13 @@ export default async function ReportesPage() {
 
   return (
     <div className="flex flex-col gap-6">
-      <h1 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-50">
+      <h1 className="text-2xl font-semibold text-club-navy-800">
         Reportes
       </h1>
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <div className="rounded-lg border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-950">
-          <h2 className="text-lg font-medium text-zinc-900 dark:text-zinc-50">
+        <div className="rounded-lg border border-border bg-surface p-6">
+          <h2 className="text-lg font-medium text-club-navy-800">
             Socios morosos
           </h2>
           <p className="mt-1 text-sm text-zinc-500">
@@ -37,14 +37,14 @@ export default async function ReportesPage() {
           </p>
           <a
             href="/api/reportes/morosos"
-            className="mt-4 inline-block rounded-md bg-zinc-900 px-4 py-2 text-sm font-medium text-white hover:bg-zinc-700 dark:bg-zinc-50 dark:text-zinc-900"
+            className="mt-4 inline-block rounded-md bg-club-sky-500 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-club-sky-600"
           >
             Descargar CSV
           </a>
         </div>
 
-        <div className="rounded-lg border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-950">
-          <h2 className="text-lg font-medium text-zinc-900 dark:text-zinc-50">
+        <div className="rounded-lg border border-border bg-surface p-6">
+          <h2 className="text-lg font-medium text-club-navy-800">
             Ingresos del mes
           </h2>
           <p className="mt-1 text-sm text-zinc-500">
@@ -56,7 +56,7 @@ export default async function ReportesPage() {
           </p>
           <a
             href="/api/reportes/ingresos"
-            className="mt-4 inline-block rounded-md bg-zinc-900 px-4 py-2 text-sm font-medium text-white hover:bg-zinc-700 dark:bg-zinc-50 dark:text-zinc-900"
+            className="mt-4 inline-block rounded-md bg-club-sky-500 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-club-sky-600"
           >
             Descargar CSV
           </a>

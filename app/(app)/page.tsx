@@ -45,7 +45,7 @@ export default async function DashboardPage() {
 
   return (
     <div className="flex flex-col gap-6">
-      <h1 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-50">
+      <h1 className="text-2xl font-semibold text-club-navy-800">
         Dashboard
       </h1>
 
@@ -53,10 +53,10 @@ export default async function DashboardPage() {
         {stats.map((stat) => (
           <div
             key={stat.label}
-            className="rounded-lg border border-zinc-200 bg-white p-5 dark:border-zinc-800 dark:bg-zinc-950"
+            className="rounded-lg border border-border bg-surface p-5"
           >
             <p className="text-sm text-zinc-500">{stat.label}</p>
-            <p className="mt-2 text-2xl font-semibold text-zinc-900 dark:text-zinc-50">
+            <p className="mt-2 text-2xl font-semibold text-club-navy-800">
               {stat.value}
             </p>
           </div>

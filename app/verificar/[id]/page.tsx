@@ -15,15 +15,15 @@ export default async function VerificarSocioPage({
     .single();
 
   return (
-    <div className="flex flex-1 items-center justify-center bg-zinc-50 px-4 dark:bg-black">
-      <div className="w-full max-w-sm rounded-lg border border-zinc-200 bg-white p-8 text-center shadow-sm dark:border-zinc-800 dark:bg-zinc-950">
+    <div className="flex flex-1 items-center justify-center bg-club-sky-50 px-4">
+      <div className="w-full max-w-sm rounded-lg border border-border bg-surface p-8 text-center shadow-sm">
         <p className="text-sm font-medium uppercase tracking-wide text-zinc-500">
-          Club Itu
+          C.S.D. Ituzaingó
         </p>
 
         {socio ? (
           <>
-            <p className="mt-4 text-xl font-semibold text-zinc-900 dark:text-zinc-50">
+            <p className="mt-4 text-xl font-semibold text-club-navy-800">
               {socio.apellido}, {socio.nombre}
             </p>
             <p className="mt-1 text-sm text-zinc-500">{socio.categoria}</p>

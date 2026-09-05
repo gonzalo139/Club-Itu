@@ -24,12 +24,12 @@ export default async function PagosPage({
 
   return (
     <div className="flex flex-col gap-8">
-      <h1 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-50">
+      <h1 className="text-2xl font-semibold text-club-navy-800">
         Pagos
       </h1>
 
-      <section className="rounded-lg border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-950">
-        <h2 className="text-lg font-medium text-zinc-900 dark:text-zinc-50">
+      <section className="rounded-lg border border-border bg-surface p-6">
+        <h2 className="text-lg font-medium text-club-navy-800">
           Registrar pago
         </h2>
 
@@ -96,7 +96,7 @@ export default async function PagosPage({
 
           <button
             type="submit"
-            className="rounded-md bg-zinc-900 px-4 py-2 text-sm font-medium text-white hover:bg-zinc-700 dark:bg-zinc-50 dark:text-zinc-900"
+            className="rounded-md bg-club-sky-500 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-club-sky-600"
           >
             Registrar
           </button>
@@ -116,13 +116,13 @@ export default async function PagosPage({
       </section>
 
       <section>
-        <h2 className="text-lg font-medium text-zinc-900 dark:text-zinc-50">
+        <h2 className="text-lg font-medium text-club-navy-800">
           Últimos pagos
         </h2>
 
-        <div className="mt-4 overflow-hidden rounded-lg border border-zinc-200 dark:border-zinc-800">
+        <div className="mt-4 overflow-hidden rounded-lg border border-border">
           <table className="w-full text-left text-sm">
-            <thead className="bg-zinc-100 text-zinc-600 dark:bg-zinc-900 dark:text-zinc-400">
+            <thead className="bg-club-sky-50 text-club-navy-700">
               <tr>
                 <th className="px-4 py-3 font-medium">Socio</th>
                 <th className="px-4 py-3 font-medium">Monto</th>
@@ -130,15 +130,15 @@ export default async function PagosPage({
                 <th className="px-4 py-3 font-medium">Fecha</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-zinc-200 dark:divide-zinc-800">
+            <tbody className="divide-y divide-border">
               {(pagos ?? []).map((pago) => {
                 const socio = pago.socios as unknown as {
                   nombre: string;
                   apellido: string;
                 } | null;
                 return (
-                  <tr key={pago.id} className="bg-white dark:bg-zinc-950">
-                    <td className="px-4 py-3 text-zinc-900 dark:text-zinc-50">
+                  <tr key={pago.id} className="bg-surface">
+                    <td className="px-4 py-3 text-club-navy-800">
                       {socio ? `${socio.apellido}, ${socio.nombre}` : "—"}
                     </td>
                     <td className="px-4 py-3 text-zinc-500">

@@ -67,6 +67,32 @@ Funcionalidades de nivel 2/3 (comunicación masiva, portal del socio, gestión
 de actividades, etc.) se evalúan e implementan en fases posteriores, no forman
 parte de este MVP.
 
+## Usuarios sin email real (login por nombre de usuario)
+
+Supabase Auth requiere un email por cuenta, pero no todos los miembros de la
+comisión tienen (o quieren dar) un email real. Para esos casos, se crea el
+usuario en Supabase con un email inventado bajo el dominio
+`clubitu.com.ar`, por ejemplo `mari@clubitu.com.ar`. En el login de la app,
+la persona escribe solo `mari` (sin el dominio) y el código arma el email
+completo automáticamente.
+
+Para crear uno de estos usuarios:
+
+1. En Supabase → **Authentication → Users → Add user**.
+2. Email: `nombredeusuario@clubitu.com.ar` (en minúsculas, sin espacios).
+3. Password: la que quieras asignarle.
+4. **Importante**: creá el usuario desde acá (el panel de Supabase), nunca
+   con un formulario de "registrarme" público — el panel confirma la cuenta
+   al instante sin intentar mandar un mail real (que fallaría, porque el
+   dominio no existe). Si en algún momento se agrega una opción de
+   autorregistro en la app, hay que asegurarse de que también fuerce la
+   confirmación automática, o esas cuentas van a quedar sin poder
+   loguearse.
+
+Si alguien se olvida la contraseña, como el email no es real no hay
+"recuperar contraseña" posible por mail — hay que resetearla manualmente
+desde Supabase → Authentication → Users.
+
 ## Deploy
 
 Conectar este repositorio en [Vercel](https://vercel.com/new) y configurar las

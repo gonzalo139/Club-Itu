@@ -19,13 +19,15 @@ export default async function LoginPage({
 
         <form action={login} className="mt-6 flex flex-col gap-4">
           <div className="flex flex-col gap-1">
-            <label htmlFor="email" className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
-              Email
+            <label htmlFor="usuario" className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+              Usuario
             </label>
             <input
-              id="email"
-              name="email"
-              type="email"
+              id="usuario"
+              name="usuario"
+              type="text"
+              autoCapitalize="none"
+              autoCorrect="off"
               required
               className="rounded-md border border-zinc-300 px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-900"
             />

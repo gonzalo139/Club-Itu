@@ -8,6 +8,7 @@ const links = [
   { href: "/pagos", label: "Pagos" },
   { href: "/actividades", label: "Actividades" },
   { href: "/reportes", label: "Reportes" },
+  { href: "/configuracion", label: "Configuración" },
 ];
 
 export function Nav() {

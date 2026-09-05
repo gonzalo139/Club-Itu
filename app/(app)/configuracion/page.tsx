@@ -2,8 +2,10 @@ import { createClient } from "@/lib/supabase/server";
 import {
   actualizarMontoCategoria,
   crearCategoria,
+  eliminarCategoria,
   actualizarMontoActividad,
 } from "./actions";
+import { EliminarCategoriaButton } from "./eliminar-categoria-button";
 
 export default async function ConfiguracionPage({
   searchParams,
@@ -41,32 +43,45 @@ export default async function ConfiguracionPage({
 
         <div className="mt-4 flex flex-col gap-3">
           {(categorias ?? []).map((categoria) => (
-            <form
+            <div
               key={categoria.id}
-              action={actualizarMontoCategoria}
               className="flex items-center gap-3 rounded-md border border-zinc-200 p-3 dark:border-zinc-800"
             >
-              <input type="hidden" name="id" value={categoria.id} />
-              <span className="flex-1 text-sm font-medium text-zinc-900 dark:text-zinc-50">
-                {categoria.nombre}
-              </span>
-              <span className="text-sm text-zinc-500">$</span>
-              <input
-                name="monto_cuota"
-                type="number"
-                step="0.01"
-                min="0"
-                defaultValue={categoria.monto_cuota}
-                className="w-32 rounded-md border border-zinc-300 px-3 py-1.5 text-sm dark:border-zinc-700 dark:bg-zinc-900"
-              />
-              <button
-                type="submit"
-                className="rounded-md bg-zinc-900 px-3 py-1.5 text-xs font-medium text-white hover:bg-zinc-700 dark:bg-zinc-50 dark:text-zinc-900"
+              <form
+                action={actualizarMontoCategoria}
+                className="flex flex-1 items-center gap-3"
               >
-                Guardar
-              </button>
-            </form>
+                <input type="hidden" name="id" value={categoria.id} />
+                <span className="flex-1 text-sm font-medium text-zinc-900 dark:text-zinc-50">
+                  {categoria.nombre}
+                </span>
+                <span className="text-sm text-zinc-500">$</span>
+                <input
+                  name="monto_cuota"
+                  type="number"
+                  step="0.01"
+                  min="0"
+                  defaultValue={categoria.monto_cuota}
+                  className="w-32 rounded-md border border-zinc-300 px-3 py-1.5 text-sm dark:border-zinc-700 dark:bg-zinc-900"
+                />
+                <button
+                  type="submit"
+                  className="rounded-md bg-zinc-900 px-3 py-1.5 text-xs font-medium text-white hover:bg-zinc-700 dark:bg-zinc-50 dark:text-zinc-900"
+                >
+                  Guardar
+                </button>
+              </form>
+
+              <form action={eliminarCategoria}>
+                <input type="hidden" name="id" value={categoria.id} />
+                <EliminarCategoriaButton nombre={categoria.nombre} />
+              </form>
+            </div>
           ))}
+
+          {(categorias ?? []).length === 0 && (
+            <p className="text-sm text-zinc-500">Todavía no hay categorías cargadas.</p>
+          )}
         </div>
 
         <details className="mt-4">

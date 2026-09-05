@@ -26,73 +26,73 @@ export default async function NuevoSocioPage({
       >
         <div className="grid grid-cols-2 gap-4">
           <div className="flex flex-col gap-1">
-            <label htmlFor="nombre" className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+            <label htmlFor="nombre" className="text-sm font-medium text-zinc-700">
               Nombre
             </label>
             <input
               id="nombre"
               name="nombre"
               required
-              className="rounded-md border border-zinc-300 px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-900"
+              className="rounded-md border border-zinc-300 px-3 py-2 text-sm"
             />
           </div>
           <div className="flex flex-col gap-1">
-            <label htmlFor="apellido" className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+            <label htmlFor="apellido" className="text-sm font-medium text-zinc-700">
               Apellido
             </label>
             <input
               id="apellido"
               name="apellido"
               required
-              className="rounded-md border border-zinc-300 px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-900"
+              className="rounded-md border border-zinc-300 px-3 py-2 text-sm"
             />
           </div>
         </div>
 
         <div className="flex flex-col gap-1">
-          <label htmlFor="dni" className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+          <label htmlFor="dni" className="text-sm font-medium text-zinc-700">
             DNI
           </label>
           <input
             id="dni"
             name="dni"
-            className="rounded-md border border-zinc-300 px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-900"
+            className="rounded-md border border-zinc-300 px-3 py-2 text-sm"
           />
         </div>
 
         <div className="grid grid-cols-2 gap-4">
           <div className="flex flex-col gap-1">
-            <label htmlFor="email" className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+            <label htmlFor="email" className="text-sm font-medium text-zinc-700">
               Email
             </label>
             <input
               id="email"
               name="email"
               type="email"
-              className="rounded-md border border-zinc-300 px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-900"
+              className="rounded-md border border-zinc-300 px-3 py-2 text-sm"
             />
           </div>
           <div className="flex flex-col gap-1">
-            <label htmlFor="telefono" className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+            <label htmlFor="telefono" className="text-sm font-medium text-zinc-700">
               Teléfono
             </label>
             <input
               id="telefono"
               name="telefono"
-              className="rounded-md border border-zinc-300 px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-900"
+              className="rounded-md border border-zinc-300 px-3 py-2 text-sm"
             />
           </div>
         </div>
 
         <div className="flex flex-col gap-1">
-          <label htmlFor="categoria_id" className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+          <label htmlFor="categoria_id" className="text-sm font-medium text-zinc-700">
             Categoría
           </label>
           <select
             id="categoria_id"
             name="categoria_id"
             required
-            className="rounded-md border border-zinc-300 px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-900"
+            className="rounded-md border border-zinc-300 px-3 py-2 text-sm"
           >
             {(categorias ?? []).map((categoria) => (
               <option key={categoria.id} value={categoria.id}>

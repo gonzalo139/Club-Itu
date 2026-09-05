@@ -3,9 +3,9 @@ import { createClient } from "@/lib/supabase/server";
 import { cambiarEstadoSocio } from "./actions";
 
 const estadoStyles: Record<string, string> = {
-  activo: "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200",
-  inactivo: "bg-zinc-100 text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300",
-  suspendido: "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200",
+  activo: "bg-green-100 text-green-800",
+  inactivo: "bg-zinc-100 text-zinc-600",
+  suspendido: "bg-red-100 text-red-800",
 };
 
 export default async function SociosPage() {
@@ -61,7 +61,7 @@ export default async function SociosPage() {
                 <td className="px-4 py-3 text-right">
                   <Link
                     href={`/socios/${socio.id}/carnet`}
-                    className="mr-3 text-xs text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100"
+                    className="mr-3 text-xs text-zinc-500 hover:text-zinc-900"
                   >
                     Carnet
                   </Link>

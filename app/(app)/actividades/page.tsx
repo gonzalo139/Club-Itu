@@ -54,7 +54,7 @@ export default async function ActividadesPage({
         </h2>
         <form action={crearActividad} className="mt-4 flex flex-wrap items-end gap-4">
           <div className="flex flex-col gap-1">
-            <label htmlFor="nombre" className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+            <label htmlFor="nombre" className="text-sm font-medium text-zinc-700">
               Nombre
             </label>
             <input
@@ -62,11 +62,11 @@ export default async function ActividadesPage({
               name="nombre"
               required
               placeholder="Fútbol, Vóley, Gimnasia..."
-              className="rounded-md border border-zinc-300 px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-900"
+              className="rounded-md border border-zinc-300 px-3 py-2 text-sm"
             />
           </div>
           <div className="flex flex-col gap-1">
-            <label htmlFor="monto_cuota" className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+            <label htmlFor="monto_cuota" className="text-sm font-medium text-zinc-700">
               Cuota adicional (opcional)
             </label>
             <input
@@ -76,7 +76,7 @@ export default async function ActividadesPage({
               step="0.01"
               min="0"
               defaultValue={0}
-              className="rounded-md border border-zinc-300 px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-900"
+              className="rounded-md border border-zinc-300 px-3 py-2 text-sm"
             />
           </div>
           <button
@@ -119,13 +119,13 @@ export default async function ActividadesPage({
               <form action={inscribirSocio} className="mt-4 flex flex-wrap items-end gap-3">
                 <input type="hidden" name="actividad_id" value={actividad.id} />
                 <div className="flex flex-1 min-w-[220px] flex-col gap-1">
-                  <label className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+                  <label className="text-sm font-medium text-zinc-700">
                     Inscribir socio
                   </label>
                   <select
                     name="socio_id"
                     required
-                    className="rounded-md border border-zinc-300 px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-900"
+                    className="rounded-md border border-zinc-300 px-3 py-2 text-sm"
                   >
                     {(socios ?? []).map((socio) => (
                       <option key={socio.id} value={socio.id}>
@@ -136,7 +136,7 @@ export default async function ActividadesPage({
                 </div>
                 <button
                   type="submit"
-                  className="rounded-md border border-zinc-300 px-4 py-2 text-sm font-medium text-zinc-700 hover:bg-zinc-50 dark:border-zinc-700 dark:text-zinc-300 dark:hover:bg-zinc-900"
+                  className="rounded-md border border-zinc-300 px-4 py-2 text-sm font-medium text-zinc-700 hover:bg-zinc-50"
                 >
                   Inscribir
                 </button>
@@ -147,9 +147,9 @@ export default async function ActividadesPage({
                   {inscriptos.map((inscripcion) => (
                     <li
                       key={inscripcion.id}
-                      className="flex items-center justify-between border-t border-zinc-100 py-2 dark:border-zinc-900"
+                      className="flex items-center justify-between border-t border-zinc-100 py-2"
                     >
-                      <span className="text-zinc-700 dark:text-zinc-300">
+                      <span className="text-zinc-700">
                         {inscripcion.socio
                           ? `${inscripcion.socio.apellido}, ${inscripcion.socio.nombre}`
                           : "—"}

@@ -2,10 +2,10 @@ import { createClient } from "@/lib/supabase/server";
 import { GenerarCuotasButton } from "./generar-button";
 
 const estadoStyles: Record<string, string> = {
-  pendiente: "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200",
-  pagada: "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200",
-  vencida: "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200",
-  anulada: "bg-zinc-100 text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300",
+  pendiente: "bg-yellow-100 text-yellow-800",
+  pagada: "bg-green-100 text-green-800",
+  vencida: "bg-red-100 text-red-800",
+  anulada: "bg-zinc-100 text-zinc-600",
 };
 
 export default async function CuotasPage() {

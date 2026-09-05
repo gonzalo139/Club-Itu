@@ -35,14 +35,14 @@ export default async function PagosPage({
 
         <form action={registrarPago} className="mt-4 flex flex-wrap items-end gap-4">
           <div className="flex flex-1 min-w-[220px] flex-col gap-1">
-            <label htmlFor="cuota_id" className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+            <label htmlFor="cuota_id" className="text-sm font-medium text-zinc-700">
               Cuota
             </label>
             <select
               id="cuota_id"
               name="cuota_id"
               required
-              className="rounded-md border border-zinc-300 px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-900"
+              className="rounded-md border border-zinc-300 px-3 py-2 text-sm"
             >
               {(cuotasPendientes ?? []).map((cuota) => {
                 const socio = cuota.socios as unknown as {
@@ -69,13 +69,13 @@ export default async function PagosPage({
           </div>
 
           <div className="flex flex-col gap-1">
-            <label htmlFor="metodo" className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+            <label htmlFor="metodo" className="text-sm font-medium text-zinc-700">
               Método
             </label>
             <select
               id="metodo"
               name="metodo"
-              className="rounded-md border border-zinc-300 px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-900"
+              className="rounded-md border border-zinc-300 px-3 py-2 text-sm"
             >
               <option value="efectivo">Efectivo</option>
               <option value="transferencia">Transferencia</option>
@@ -84,13 +84,13 @@ export default async function PagosPage({
           </div>
 
           <div className="flex flex-1 min-w-[200px] flex-col gap-1">
-            <label htmlFor="observaciones" className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+            <label htmlFor="observaciones" className="text-sm font-medium text-zinc-700">
               Observaciones
             </label>
             <input
               id="observaciones"
               name="observaciones"
-              className="rounded-md border border-zinc-300 px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-900"
+              className="rounded-md border border-zinc-300 px-3 py-2 text-sm"
             />
           </div>
 

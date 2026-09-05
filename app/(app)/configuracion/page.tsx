@@ -45,7 +45,7 @@ export default async function ConfiguracionPage({
           {(categorias ?? []).map((categoria) => (
             <div
               key={categoria.id}
-              className="flex items-center gap-3 rounded-md border border-zinc-200 p-3 dark:border-zinc-800"
+              className="flex items-center gap-3 rounded-md border border-zinc-200 p-3"
             >
               <form
                 action={actualizarMontoCategoria}
@@ -62,7 +62,7 @@ export default async function ConfiguracionPage({
                   step="0.01"
                   min="0"
                   defaultValue={categoria.monto_cuota}
-                  className="w-32 rounded-md border border-zinc-300 px-3 py-1.5 text-sm dark:border-zinc-700 dark:bg-zinc-900"
+                  className="w-32 rounded-md border border-zinc-300 px-3 py-1.5 text-sm"
                 />
                 <button
                   type="submit"
@@ -85,7 +85,7 @@ export default async function ConfiguracionPage({
         </div>
 
         <details className="mt-4">
-          <summary className="cursor-pointer text-sm text-zinc-600 dark:text-zinc-400">
+          <summary className="cursor-pointer text-sm text-zinc-600">
             + Agregar categoría nueva
           </summary>
           <form
@@ -93,17 +93,17 @@ export default async function ConfiguracionPage({
             className="mt-3 flex flex-wrap items-end gap-3"
           >
             <div className="flex flex-col gap-1">
-              <label className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+              <label className="text-sm font-medium text-zinc-700">
                 Nombre
               </label>
               <input
                 name="nombre"
                 required
-                className="rounded-md border border-zinc-300 px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-900"
+                className="rounded-md border border-zinc-300 px-3 py-2 text-sm"
               />
             </div>
             <div className="flex flex-col gap-1">
-              <label className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+              <label className="text-sm font-medium text-zinc-700">
                 Monto cuota
               </label>
               <input
@@ -112,12 +112,12 @@ export default async function ConfiguracionPage({
                 step="0.01"
                 min="0"
                 defaultValue={0}
-                className="rounded-md border border-zinc-300 px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-900"
+                className="rounded-md border border-zinc-300 px-3 py-2 text-sm"
               />
             </div>
             <button
               type="submit"
-              className="rounded-md border border-zinc-300 px-4 py-2 text-sm font-medium text-zinc-700 hover:bg-zinc-50 dark:border-zinc-700 dark:text-zinc-300 dark:hover:bg-zinc-900"
+              className="rounded-md border border-zinc-300 px-4 py-2 text-sm font-medium text-zinc-700 hover:bg-zinc-50"
             >
               Crear
             </button>
@@ -139,7 +139,7 @@ export default async function ConfiguracionPage({
             <form
               key={actividad.id}
               action={actualizarMontoActividad}
-              className="flex items-center gap-3 rounded-md border border-zinc-200 p-3 dark:border-zinc-800"
+              className="flex items-center gap-3 rounded-md border border-zinc-200 p-3"
             >
               <input type="hidden" name="id" value={actividad.id} />
               <span className="flex-1 text-sm font-medium text-club-navy-800">
@@ -152,7 +152,7 @@ export default async function ConfiguracionPage({
                 step="0.01"
                 min="0"
                 defaultValue={actividad.monto_cuota}
-                className="w-32 rounded-md border border-zinc-300 px-3 py-1.5 text-sm dark:border-zinc-700 dark:bg-zinc-900"
+                className="w-32 rounded-md border border-zinc-300 px-3 py-1.5 text-sm"
               />
               <button
                 type="submit"

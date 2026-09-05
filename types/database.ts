@@ -46,6 +46,30 @@ export type Pago = {
   created_at: string;
 };
 
+export type Actividad = {
+  id: string;
+  nombre: string;
+  monto_cuota: number;
+  activa: boolean;
+  created_at: string;
+};
+
+export type SocioActividad = {
+  id: string;
+  socio_id: string;
+  actividad_id: string;
+  fecha_inscripcion: string;
+  created_at: string;
+};
+
+export type VerificacionSocio = {
+  id: string;
+  nombre: string;
+  apellido: string;
+  estado: EstadoSocio;
+  categoria: string;
+};
+
 export type Database = {
   public: {
     Tables: {
@@ -104,8 +128,40 @@ export type Database = {
           },
         ];
       };
+      actividades: {
+        Row: Actividad;
+        Insert: Omit<Actividad, "id" | "created_at">;
+        Update: Partial<Omit<Actividad, "id" | "created_at">>;
+        Relationships: [];
+      };
+      socio_actividades: {
+        Row: SocioActividad;
+        Insert: Omit<SocioActividad, "id" | "created_at">;
+        Update: Partial<Omit<SocioActividad, "id" | "created_at">>;
+        Relationships: [
+          {
+            foreignKeyName: "socio_actividades_socio_id_fkey";
+            columns: ["socio_id"];
+            isOneToOne: false;
+            referencedRelation: "socios";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "socio_actividades_actividad_id_fkey";
+            columns: ["actividad_id"];
+            isOneToOne: false;
+            referencedRelation: "actividades";
+            referencedColumns: ["id"];
+          },
+        ];
+      };
     };
-    Views: Record<string, never>;
+    Views: {
+      verificacion_socios: {
+        Row: VerificacionSocio;
+        Relationships: [];
+      };
+    };
     Functions: Record<string, never>;
     Enums: Record<string, never>;
     CompositeTypes: Record<string, never>;

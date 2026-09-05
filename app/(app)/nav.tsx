@@ -6,6 +6,8 @@ const links = [
   { href: "/socios", label: "Socios" },
   { href: "/cuotas", label: "Cuotas" },
   { href: "/pagos", label: "Pagos" },
+  { href: "/actividades", label: "Actividades" },
+  { href: "/reportes", label: "Reportes" },
 ];
 
 export function Nav() {

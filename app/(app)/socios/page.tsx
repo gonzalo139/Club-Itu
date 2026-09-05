@@ -59,6 +59,12 @@ export default async function SociosPage() {
                   </span>
                 </td>
                 <td className="px-4 py-3 text-right">
+                  <Link
+                    href={`/socios/${socio.id}/carnet`}
+                    className="mr-3 text-xs text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100"
+                  >
+                    Carnet
+                  </Link>
                   {socio.estado === "activo" ? (
                     <form
                       action={cambiarEstadoSocio.bind(null, socio.id, "inactivo")}

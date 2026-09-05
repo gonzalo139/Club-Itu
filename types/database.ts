@@ -2,15 +2,15 @@ export type EstadoSocio = "activo" | "inactivo" | "suspendido";
 export type EstadoCuota = "pendiente" | "pagada" | "vencida" | "anulada";
 export type MetodoPago = "efectivo" | "transferencia" | "otro";
 
-export interface Categoria {
+export type Categoria = {
   id: string;
   nombre: string;
   monto_cuota: number;
   activa: boolean;
   created_at: string;
-}
+};
 
-export interface Socio {
+export type Socio = {
   id: string;
   nombre: string;
   apellido: string;
@@ -23,9 +23,9 @@ export interface Socio {
   notas: string | null;
   created_at: string;
   updated_at: string;
-}
+};
 
-export interface Cuota {
+export type Cuota = {
   id: string;
   socio_id: string;
   periodo: string;
@@ -33,9 +33,9 @@ export interface Cuota {
   estado: EstadoCuota;
   fecha_vencimiento: string;
   created_at: string;
-}
+};
 
-export interface Pago {
+export type Pago = {
   id: string;
   cuota_id: string | null;
   socio_id: string;
@@ -44,31 +44,70 @@ export interface Pago {
   fecha_pago: string;
   observaciones: string | null;
   created_at: string;
-}
+};
 
-export interface Database {
+export type Database = {
   public: {
     Tables: {
       categorias: {
         Row: Categoria;
         Insert: Omit<Categoria, "id" | "created_at">;
         Update: Partial<Omit<Categoria, "id" | "created_at">>;
+        Relationships: [];
       };
       socios: {
         Row: Socio;
         Insert: Omit<Socio, "id" | "created_at" | "updated_at">;
         Update: Partial<Omit<Socio, "id" | "created_at" | "updated_at">>;
+        Relationships: [
+          {
+            foreignKeyName: "socios_categoria_id_fkey";
+            columns: ["categoria_id"];
+            isOneToOne: false;
+            referencedRelation: "categorias";
+            referencedColumns: ["id"];
+          },
+        ];
       };
       cuotas: {
         Row: Cuota;
         Insert: Omit<Cuota, "id" | "created_at">;
         Update: Partial<Omit<Cuota, "id" | "created_at">>;
+        Relationships: [
+          {
+            foreignKeyName: "cuotas_socio_id_fkey";
+            columns: ["socio_id"];
+            isOneToOne: false;
+            referencedRelation: "socios";
+            referencedColumns: ["id"];
+          },
+        ];
       };
       pagos: {
         Row: Pago;
         Insert: Omit<Pago, "id" | "created_at">;
         Update: Partial<Omit<Pago, "id" | "created_at">>;
+        Relationships: [
+          {
+            foreignKeyName: "pagos_cuota_id_fkey";
+            columns: ["cuota_id"];
+            isOneToOne: false;
+            referencedRelation: "cuotas";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "pagos_socio_id_fkey";
+            columns: ["socio_id"];
+            isOneToOne: false;
+            referencedRelation: "socios";
+            referencedColumns: ["id"];
+          },
+        ];
       };
     };
+    Views: Record<string, never>;
+    Functions: Record<string, never>;
+    Enums: Record<string, never>;
+    CompositeTypes: Record<string, never>;
   };
-}
+};
